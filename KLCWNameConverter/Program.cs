@@ -11,7 +11,9 @@ namespace KLCWNameConverter
 {
    class Program
    {
-      static void Main(string[] args)
+        private const string folderPath = @"E:\!KLCW";
+
+        static void Main(string[] args)
       {
          WebRequest req = WebRequest.Create("https://pl.wikiradio.org/wiki/Klub_Ludzi_Ciekawych_Wszystkiego");
          WebResponse res = req.GetResponse();
@@ -19,7 +21,7 @@ namespace KLCWNameConverter
          {
             string content = reader.ReadToEnd();
 
-            foreach (var f in Directory.GetFiles(@"E:\!KLCW"))
+            foreach (var f in Directory.GetFiles(folderPath))
             {
 
                //<li> 2013 - 06 - 02 Brzechwa bał się dzieci!Zaczął pisać bajki, by uwieść przedszkolankę?
